@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<style>
+  @font-face { font-family: 'x'; src: local('Microsoft YaHei'); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 2560px; height: 1440px; overflow: hidden; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+    background: #0a1628;
+    position: relative;
+  }
+  .bg {
+    position: absolute; inset: 0;
+    background-image: url('src/background.jpg');
+    background-size: cover; background-position: center right;
+  }
+  /* 左侧压暗，保证文字对比度 */
+  .scrim {
+    position: absolute; inset: 0;
+    background: linear-gradient(100deg,
+      rgba(7, 16, 32, 0.96) 0%,
+      rgba(7, 16, 32, 0.88) 30%,
+      rgba(7, 16, 32, 0.45) 52%,
+      rgba(7, 16, 32, 0.0) 72%);
+  }
+  .content {
+    position: absolute;
+    left: 190px; top: 50%;
+    transform: translateY(-50%);
+    width: 1300px;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 16px;
+    padding: 16px 34px;
+    border: 2px solid rgba(74, 154, 255, 0.5);
+    border-radius: 999px;
+    background: rgba(30, 90, 170, 0.22);
+    margin-bottom: 54px;
+  }
+  .badge span {
+    font-size: 32px; font-weight: 600; letter-spacing: 5px;
+    color: #8ec5ff;
+  }
+  .dot { width: 11px; height: 11px; border-radius: 50%; background: #4a9aff;
+         box-shadow: 0 0 16px 3px rgba(74,154,255,.85); }
+  h1 {
+    font-size: 176px; font-weight: 800; letter-spacing: 14px;
+    color: #ffffff; line-height: 1.04;
+    text-shadow: 0 8px 44px rgba(0, 40, 100, 0.85);
+  }
+  .en {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 92px; font-weight: 700; letter-spacing: 8px;
+    color: #4a9aff; margin-top: 18px;
+    text-shadow: 0 0 40px rgba(74,154,255,.45);
+  }
+  .rule {
+    width: 250px; height: 8px; margin: 52px 0 52px;
+    background: linear-gradient(90deg, #ffb454 0%, #4a9aff 100%);
+    border-radius: 4px;
+  }
+  .tagline {
+    font-size: 60px; font-weight: 700; letter-spacing: 4px;
+    color: #d6e7ff; line-height: 1.5;
+  }
+  .sub {
+    margin-top: 30px;
+    font-size: 40px; font-weight: 400; letter-spacing: 2px;
+    color: #7fa3cc; line-height: 1.6;
+  }
+  .foot {
+    position: absolute; left: 190px; bottom: 96px;
+    display: flex; align-items: center; gap: 28px;
+    font-size: 30px; color: #5d7fa8; letter-spacing: 3px;
+  }
+  .foot b { color: #ffb454; font-weight: 700; }
+  .foot i { font-style: normal; color: #2f4a6b; }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="scrim"></div>
+
+  <div class="content">
+    <div class="badge"><i class="dot"></i><span>开源 · 免费 · 自主可控</span></div>
+    <h1>标书匠</h1>
+    <div class="en">BidCraft</div>
+    <div class="rule"></div>
+    <div class="tagline">对话式工程标书编制智能体</div>
+    <div class="sub">让 AI 写完技术标的初稿，你只做审核和补图</div>
+  </div>
+
+  <div class="foot">
+    <span>LLM-Wiki 知识路线</span><i>|</i>
+    <span>标段级隔离</span><i>|</i>
+    <span>全局事实可追溯</span><i>|</i>
+    <b>Apache-2.0</b>
+  </div>
+</body>
+</html>

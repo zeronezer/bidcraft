@@ -1,0 +1,103 @@
+/* ============================================================
+   标书匠 BidCraft · 全局设计基座
+   风格：深色侧边 · 现代科技风（工程指挥中心质感）
+   ============================================================ */
+
+:root {
+  /* 深色面板（墨蓝，偏蓝中性色，非纯黑） */
+  --ink-950: #0a101d;
+  --ink-900: #0d1526;
+  --ink-850: #111a2e;
+  --ink-800: #16213a;
+  --ink-700: #1f2c4a;
+  --ink-600: #2c3c60;
+  --ink-line: rgba(148, 163, 200, 0.14);   /* 深色面板发丝边框 */
+  --ink-line-strong: rgba(148, 163, 200, 0.26);
+  --ink-text: #e6eaf4;
+  --ink-text-2: #a8b4d0;
+  --ink-text-3: #8693b8;   /* 提亮：深蓝底上 #66739a 对比度不足，久看费眼 */
+
+  /* 浅色工作区（偏蓝的纸面白，非纯白） */
+  --paper: #f4f6fa;
+  --paper-warm: #eef1f7;
+  --card: #ffffff;
+  --line: #e4e8f0;
+  --line-strong: #d3d9e4;
+  --text: #1a2332;
+  --text-2: #4c586e;
+  --text-3: #8b95ab;
+
+  /* 品牌与状态色 */
+  --brand: #2f5fd0;          /* 工程蓝：主行动 */
+  --brand-deep: #2348a8;
+  --brand-soft: #e8eefa;
+  --amber: #d97706;          /* 琥珀：等待确认 */
+  --amber-soft: #fdf3e3;
+  --green: #0e9f6e;          /* 翠绿：完成 */
+  --green-soft: #e3f5ee;
+  --red: #d94848;
+  --cyan: #3aa8c9;
+
+  /* 排版 */
+  --font-num: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  --radius-s: 6px;
+  --radius-m: 10px;
+
+  /* 阴影（克制、低透明度） */
+  --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow-pop: 0 10px 32px rgba(10, 16, 29, 0.14);
+
+  /* Element Plus 主题变量覆盖 */
+  --el-color-primary: var(--brand);
+  --el-color-primary-light-3: #5c84dd;
+  --el-color-primary-light-5: #8aa9e7;
+  --el-color-primary-light-7: #b8ccf1;
+  --el-color-primary-light-8: #d1def6;
+  --el-color-primary-light-9: #e8eefa;
+  --el-color-primary-dark-2: var(--brand-deep);
+  --el-color-success: var(--green);
+  --el-color-warning: var(--amber);
+  --el-color-danger: var(--red);
+  --el-border-radius-base: var(--radius-s);
+  --el-border-color: var(--line);
+  --el-border-color-light: var(--line);
+  --el-border-color-lighter: var(--line);
+  --el-text-color-primary: var(--text);
+  --el-text-color-regular: var(--text-2);
+  --el-text-color-secondary: var(--text-3);
+  --el-fill-color-light: var(--paper-warm);
+  --el-font-family: 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body, #app { height: 100%; margin: 0; }
+
+body {
+  font-family: 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  color: var(--text);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 等宽数字工具类：编号、进度、时间 */
+.num { font-family: var(--font-num); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+
+/* 滚动条细化 */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(100, 116, 150, 0.28); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(100, 116, 150, 0.45); }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* Element 细节统一 */
+.el-button { font-weight: 500; }
+.el-dialog { border-radius: var(--radius-m); }
+.el-dialog__header { border-bottom: 1px solid var(--line); margin-right: 0; padding-bottom: 14px; }
+.el-table { --el-table-header-bg-color: var(--paper-warm); --el-table-border-color: var(--line); }
+.el-table th.el-table__cell { font-weight: 600; color: var(--text-2); }
+.el-tree { --el-tree-node-hover-bg-color: var(--paper-warm); background: transparent; }
+.el-empty__description p { color: var(--text-3); }
+
+/* 页面切换过渡 */
+.fade-enter-active, .fade-leave-active { transition: opacity 0.18s ease-out; }
+.fade-enter-from, .fade-leave-to { opacity: 0; }

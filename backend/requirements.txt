@@ -1,0 +1,41 @@
+# 施组AI编制系统 - 后端依赖
+# Python >= 3.11（建议使用项目 venv 安装）
+
+# Web 框架
+fastapi>=0.115
+uvicorn[standard]>=0.32
+python-multipart>=0.0.18
+
+# 配置
+pydantic-settings>=2.6
+python-dotenv>=1.0
+
+# 数据库
+pymysql>=1.1
+
+# 智能体编排
+langgraph>=1.0
+langgraph-checkpoint-mysql>=3.0   # 编制会话 MySQL 检查点（PyMySQLSaver，进程重启可恢复）
+
+# ============ 文档解析 ============
+# docx → python-docx 原生解析；PDF / 图片 → MinerU 云端 API（见 app/agents/parser_agent.py）
+python-docx>=1.1     # docx 结构直读（对象级切章 + full.md 渲染）
+pypdf>=5.0           # PDF 页数统计（MinerU 切块用）
+pdfplumber>=0.11     # PDF 校验与表格提取（备用）
+
+# ---------- 可选：docx → PDF 兜底链路 ----------
+# 仅 parser_agent 的 docx_mode="mineru" 兜底分支会用到（默认不走），
+# 且**仅 Windows 可用**（依赖本机 Office/WPS 的 COM 接口）。
+# 正常使用 python-docx 路线时不需要安装，故不列入必需依赖。
+# 确需启用兜底时再手动安装：pip install docx2pdf pywin32
+#docx2pdf>=0.1.8
+#pywin32>=306
+
+# 注：docx2python 已弃用（python-docx 读 Heading 样式更可靠）
+
+# HTTP 客户端（LLM / MinerU 云端 API）
+httpx>=0.27
+
+# 电子表格直读解析（附表/计划表，不经 MinerU）
+openpyxl>=3.1
+xlrd>=2.0

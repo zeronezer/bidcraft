@@ -1,0 +1,38 @@
+BidCraft 标书匠
+Copyright 2026 zeronezer
+
+This product includes software developed as part of the BidCraft project
+(https://github.com/zeronezer/bidcraft).
+
+-------------------------------------------------------------------------------
+本产品包含由 BidCraft 标书匠 项目开发的软件。
+任何基于本项目的衍生产品，必须保留本 NOTICE 文件，并在其文档或界面中
+显著标注来源。详见 ATTRIBUTION.md。
+-------------------------------------------------------------------------------
+
+第三方依赖声明 / Third-party dependencies
+
+本项目在运行时会调用或以依赖包形式使用以下第三方服务与开源组件，
+它们各自遵循其自身的许可协议，版权归各自所有者所有：
+
+运行时服务（需自行申请账号）：
+  - MinerU（上海人工智能实验室 OpenDataLab）—— PDF/扫描件文档解析
+    https://mineru.net
+  - 阿里云百炼（DashScope）—— 通义千问系列大模型推理
+    https://bailian.console.aliyun.com
+
+开源组件：
+  - FastAPI, Starlette, Uvicorn, Pydantic        (MIT / BSD)
+  - LangGraph, langgraph-checkpoint-mysql        (MIT)
+  - PyMySQL                                      (MIT)
+  - httpx                                        (BSD-3-Clause)
+  - python-docx, docx2pdf, pypdf, pdfplumber,
+    openpyxl, xlrd, pywin32                      (MIT / BSD / PSF)
+  - Vue 3, Vue Router                            (MIT)
+  - Element Plus                                 (MIT)
+  - Tiptap (ProseMirror)                         (MIT)
+  - Mermaid                                      (MIT)
+  - Vite                                         (MIT)
+  - Axios                                        (MIT)
+
+完整依赖清单见 backend/requirements.txt 与 frontend/package.json。

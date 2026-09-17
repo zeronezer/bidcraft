@@ -1,0 +1,58 @@
+# ============ 依赖与构建产物 ============
+node_modules/
+dist/
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# ============ 凭据与本地配置 ============
+# 复制 .env.example 为 .env 后填写；.env 永远不要提交
+.env
+.env.*
+!.env.example
+frontend/.env.public
+
+# ============ 机密数据与运行产物 ============
+# 真实工程资料（招标文件、图纸、指导性施组等）不得进入公开仓库
+docs/样例数据/
+uploads/
+联系作者（微信二维码）.jpg
+
+# 工程文档兜底：本项目涉及的 pdf/docx/xlsx 基本都是真实投标资料，默认一律不入库。
+# 确需提交的样例文件请用 git add -f 强制添加，或在下方加 ! 白名单。
+*.pdf
+*.docx
+*.doc
+*.xlsx
+*.xls
+
+# ============ 开发期工具产物 ============
+.workbuddy/
+.playwright-mcp/
+docs/层级核对.txt
+tests/output/
+tests/_outline_probe_result.json
+backend/tools/_*.py
+
+# ============ 日志 ============
+*.log
+*.log.err
+uvicorn*.log
+uvicorn*.log.err
+vite*.log
+vite*.log.err
+
+# ============ 图片 ============
+*.png
+*.jpg
+*.jpeg
+*.gif
+# 但 README 宣传图与截图需要入库
+!docs/images/
+!docs/images/**
+
+# 推广营销内容（仅本地，不公开）
+推广营销/
